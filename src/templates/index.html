@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block main %}
+<h1>{{ SITE_NAME }}</h1>
+<p>Encourage Operational Security at your organization by pranking your coworkers. Run</p>
+<code> curl https://{{ SITE_NAME }} | bash</code>
+
+<p>It will choose a reasonably harmless script to (gently) mess with them.</p>
+<section>
+  <h2>Tips</h2>
+  <ul class="tips">
+    <li>Prepend the command with a space to avoid leaving evidence in terminal history.</li>
+    <li>Run this is a fresh terminal to avoid leaving the command in session history.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The Scripts:</h2>
+  <ul>
+  {% for script in script_names %}
+    <li><a href="/{{ script }}">{{ script }}</a></li>
+  {% endfor %}
+  </ul>
+</section>
+{% endblock %}

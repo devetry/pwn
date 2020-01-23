@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    body{
+      margin: 40px auto;
+      max-width: 650px;
+      line-height: 1.6;
+      font-size: 18px;
+      font-style: monospace;
+      color: #444;
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 80px); /* 80px == twice the 40px margin */
+    }
+    a {
+      color:#07a;
+    }
+    a:visited {
+      color:#941352;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    h1,h2,h3{
+      line-height:1.2
+    }
+    pre, code {
+      display: block;
+      background-color: #222;
+      color: #ddd;
+      padding: 10px;
+      overflow-x: scroll;
+    }
+  </style>
+  <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block main %}
+    {% endblock %}
+  </main>
+  <footer>
+    <span>Made with ❤️ at <a href="https://devetry.com">Devetry</a></span>
+    <span>Want to <a href="{{ SUGGEST_A_SCRIPT_LINK }}">suggest a script?</a></span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ name }} - {{ super() }} {% endblock %}
+
+{% block main %}
+<a href="/">back</a>
+{% if found %}
+<h1>{{ name }}</h1>
+{% else %}
+<h1>Sorry, unable to find {{ name }}</h1>
+{% endif %}
+<pre>
+{{ compiled }}
+</pre>
+
+{% endblock main %}
