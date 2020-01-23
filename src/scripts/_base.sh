@@ -8,13 +8,11 @@ function envFile() {
 }
 
 function isLinux() {
-  uname -s | grep -i "linux"
-  exit $?
+  uname -s | grep -i "linux" > /dev/null
 }
 
 function isMac() {
-  uname -s | grep -i "darwin"
-  exit $?
+  uname -s | grep -i "darwin" > /dev/null
 }
 
 echo "
@@ -28,5 +26,3 @@ echo "
 # ----- Beginning of modifications -----" >> $(envFile)
 {% block body %}
 {% endblock body %}
-echo "
-# ----- End of modifications -----" >> $(envFile)
