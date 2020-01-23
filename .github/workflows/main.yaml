@@ -17,3 +17,6 @@ jobs:
           poetry install
           poetry export -f requirements.txt -o requirements.txt
           poetry run zappa deploy production
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
