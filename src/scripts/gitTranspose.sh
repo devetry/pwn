@@ -1,6 +1,7 @@
 {% extends '_base.sh' %}
 
 {% block body %}
+echo '
 function git_alias() {
   command="$1"
   shift 1;
@@ -9,4 +10,5 @@ function git_alias() {
 }
 
 alias git=git_alias
+' >> $(envFile)
 {% endblock %}

@@ -8,4 +8,8 @@ authors = ["Brian Schiller <brian@devetry.com>"]
 python = "^3.6"
 flask = "^1.1.1"
 jinja2 = "^2.10.3"
+
+
+[tool.poetry.dev-dependencies]
 gunicorn = "^20.0.4"
+zappa = "^0.48.2"

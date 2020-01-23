@@ -1,0 +1,9 @@
+{
+    "production": {
+        "app_function": "src.app.app",
+        "project_name": "pwn",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-3q5q9kqec",
+        "aws_region": "us-west-2"
+    }
+}

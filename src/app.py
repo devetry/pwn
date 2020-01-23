@@ -53,5 +53,4 @@ def script(name):
   return render_template('detail.html', found=found, compiled=compiled, name=name)
 
 if __name__ == '__main__':
-  print (__file__)
   app.run()
