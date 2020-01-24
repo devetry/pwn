@@ -3,4 +3,4 @@ echo
 echo "available scripts:"
 {% for script in script_names %}
 echo " * {{ script }}"
-{% endfor %}
+{%- endfor %}
