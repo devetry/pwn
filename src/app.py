@@ -8,8 +8,20 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined, TemplateNotFo
 app = Flask(__name__)
 
 SITE_NAME = 'pwn.devetry.com'
-app.jinja_env.globals['SITE_NAME'] = SITE_NAME
-app.jinja_env.globals['SUGGEST_A_SCRIPT_LINK'] = 'https://github.com/devetry/pwn'
+app.jinja_env.globals['SITE_NAME'] = SITE_NAME  # pylint:disable=no-member
+app.jinja_env.globals['SUGGEST_A_SCRIPT_LINK'] = 'https://github.com/devetry/pwn'  # pylint:disable=no-member
+
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
 
 FRUITS = (
   'canteloupe', 'pineapple', 'apple', 'pear', 'cranberry', 'pumpkin', 'lemon',
