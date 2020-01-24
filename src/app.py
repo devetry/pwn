@@ -1,5 +1,6 @@
 import os
 import random
+from datetime import datetime
 
 from flask import Flask, request, render_template
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, TemplateNotFound
@@ -38,7 +39,11 @@ def random_script():
 def index():
   if 'curl' in request.headers.get('User-Agent'):
     return random_script(), 200, {'Content-Type': 'text/plain; charset=utf-8'}
-  return render_template('index.html', script_names=SCRIPT_NAMES)
+  return render_template(
+    'index.html',
+    script_names=SCRIPT_NAMES,
+    year=datetime.now().year
+  )
 
 @app.route('/<name>')
 def script(name):
