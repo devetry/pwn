@@ -1,5 +1,4 @@
 function envFile() {
-  local SHELL=$(finger $USER | grep 'Shell:' | cut -f3 -d':')
   if [[ $SHELL =~ "zsh" ]]; then
     echo "${HOME}/.zshrc"
   else
